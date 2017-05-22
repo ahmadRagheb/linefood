@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sabha Company</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li onclick="currentDiv(1)"><a href="#">News</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About US</a></li>
+      <li><a href="#">Contact US</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+<!--       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="w3-content w3-display-container" style="max-width:800px">
+
+{% for slider in sliders %}
+      {% for image in slider %}
+    
+      <img class="mySlides" src="{{ image }}" style="width:100%">
+
+      {% endfor %}
+    {% endfor %}
+    
+
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+
+<script src="indext.js"></script>
+
+</body>
+
+</html>
+<!-- <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <h1> Ahmad Ragheb </h1>
+
+     <ul id="newslist">
+    {% for news in newslist %}
+    	{% for new in news %}
+        <li><a href="{{ new }}">{{ new }}</a></li>
+    	{% endfor %}
+    <br>
+    {% endfor %}
+    </ul>
+<br>
+     <ul id="prductslist">
+    {% for products in productslist %}
+    	{% for product in products %}
+        <li><a href="{{ product }}">{{ product }}</a></li>
+    	{% endfor %}
+    <br>
+    {% endfor %}
+    </ul>
+
+
+
+
+    </div>
+</div>
+ -->
