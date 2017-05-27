@@ -114,7 +114,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2017-05-17 09:21:47.770339", 
+ "modified": "2017-05-26 20:26:33.390408", 
  "modified_by": "Administrator", 
  "module": "Foodline", 
  "name": "News", 
@@ -185,9 +185,11 @@
  "quick_entry": 0, 
  "read_only": 0, 
  "read_only_onload": 0, 
+ "search_fields": "title", 
  "show_name_in_global_search": 0, 
  "sort_field": "modified", 
  "sort_order": "DESC", 
+ "title_field": "title", 
  "track_changes": 1, 
  "track_seen": 0
 }
