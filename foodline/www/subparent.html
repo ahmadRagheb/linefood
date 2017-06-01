@@ -20,9 +20,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -36,22 +34,20 @@
             </div>
             <div style="margin-top: 25px" class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#portfolio">NEWS</a></li>
-                    <li><a href="#services">Brands</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#pricing">PRICING</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="http://0.0.0.0:8000#portfolio">NEWS</a></li>
+                    <li><a href="http://0.0.0.0:8000#services">Brands</a></li>
+                    <li><a href="http://0.0.0.0:8000#about">ABOUT</a></li>
+                    <li><a href="http://0.0.0.0:8000#pricing">PRICING</a></li>
+                    <li><a href="http://0.0.0.0:8000#contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- navbar -->
-    
     {% block newsdetails %}{% endblock %}
     {% block slider %}{% endblock %}
     {% block news %}{% endblock %}
     {% block brands %}{% endblock %}
-    {% block dump %}{% endblock %}
 
     {% block contact %}{% endblock %}
 
@@ -65,47 +61,7 @@
         <p> All Copy Right to Linefood</p>
     </footer>
     <!-- footer -->
-    <script>
-    $(document).ready(function() {
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function() {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-    })
-    </script>
-    <!-- slide elments when scroll -->
-    <script type="text/javascript">
-    $(window).scroll(function() {
-        $(".slideanim").each(function() {
-            var pos = $(this).offset().top;
-
-            var winTop = $(window).scrollTop();
-            if (pos < winTop + 600) {
-                $(this).addClass("slide");
-            }
-        });
-    });
-    </script>
-    <script src="index.js"></script>
+   
 </body>
 
 </html>

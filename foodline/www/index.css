@@ -1,3 +1,12 @@
+/*product slider*/
+.carousel-inner .active.left  { left: -33%;             }
+.carousel-inner .active.right { left: 33%;              }
+.carousel-inner .next         { left: 33%               }
+.carousel-inner .prev         { left: -33%              }
+.carousel-control.left        { background-image: none; }
+.carousel-control.right       { background-image: none; }
+.carousel-inner .item         { background: white;      }
+/*product slider*/
 
 /* slider style */
 .mySlides {display:none}
@@ -82,7 +91,7 @@ h4 {
     background-color: #e7001b;
     z-index: 9999;
     border: 0;
-    font-size: 12px !important;
+    font-size: 22px !important;
     line-height: 1.42857143 !important;
     letter-spacing: 4px;
     border-radius: 0;
@@ -93,13 +102,20 @@ h4 {
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #e7001b !important;
-    background-color: #fff !important;
-}
+    background-color: #e7001b !important;
+    font-weight: bold;
+        font-size: 28px !important;
+
+
+/*        color: #fff !important;
+*/
+/*    color: #e7001b !important;
+*//*    background-color: #fff !important;
+*/}
 
 .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
+/*    border-color: transparent;
+*/    color: #fff !important;
 }
 
 .bg-grey {

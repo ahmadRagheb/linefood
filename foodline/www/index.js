@@ -11,6 +11,26 @@ $(".nav a").on("click", function(){
 
 
 // start of slider js 
+$('#myCarousel').carousel({
+  interval: 10000
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  }
+  else {
+    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+
+
 
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -37,6 +57,23 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-white";
+}
+
+
+// moveing slider 
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 5000); 
 }
 
 // end of slider js 
