@@ -36,7 +36,7 @@
 
 
 	.slideanim {visibility:hidden;}
-.slide {
+.slide1 {
     /* The name of the animation */
     animation-name: slide;
     -webkit-animation-name: slide; 
@@ -48,7 +48,7 @@
 }
 
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
-@keyframes slide {
+@keyframes slide1 {
     0% {
         opacity: 0;
         transform: translateY(70%);
@@ -58,7 +58,7 @@
         transform: translateY(0%);
     } 
 }
-@-webkit-keyframes slide {
+@-webkit-keyframes slide1 {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
@@ -156,13 +156,13 @@ h4 {
     color: #e7001b;
     font-size: 200px;
 }
-
+/*
 .thumbnail {
     padding: 0 0 15px 0;
     border: none;
     border-radius: 0;
 }
-
+*/
 .thumbnail img {
     width: 100%;
     height: 100%;
@@ -248,4 +248,6 @@ footer .glyphicon {
     margin-bottom: 20px;
     color: #e7001b;
 }
+
+
 

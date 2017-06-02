@@ -1,191 +1,221 @@
-{% extends "www/parent.html" %} 
-
-{% block slider %}
+{% extends "www/parent.html" %} {% block slider %}
 <div style="    padding: 114px 0px 0px 0px; margin: -2.1%;     background-color: #e7001b;
 ">
-    <div class="w3-content w3-display-container" style="max-width:100%;">
-        {% for slider in sliders %} {% for image in slider %}
-        <img class="mySlides" src="{{ image }}" style="width:100%"> {% endfor %} {% endfor %}
-        <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+    <div style="max-width:100%;" id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="" src="{{ sliders[0][0] }}" style="width:100%">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+            {% for slider in sliders %} {% if loop.index >= 2 %} {% for image in slider %}
+            <div class="item">
+                <img class="" src="{{ image }}" style="width:100%">
+                <div class="carousel-caption">
+                    ...
+                </div>
+            </div>
+            {% endfor %} {% endif %} {% endfor %}
         </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </div>
 {% endblock %} {% block news %}
-<div id="portfolio" class=" slideanim container-fluid text-center bg-grey">
+<div id="portfolio" style="padding: 60px 50px;" class="  container-fluid text-center bg-grey">
     <h2>NEWS</h2>
     <h4>Our last news </h4>
     <div class="row text-center">
         {% for new in news %}
+         {% if loop.index <= 3 %}
         <div class="col-sm-4">
             <div class="thumbnail">
                 <a href="news/news?news={{new[3]}}">
-                    <img src={{new[1]}} style="height: 233px" alt="Paris">
+                    <img class="thumbimg" src={{new[1]}} />
                     <p><strong>{{new[0]}}</strong></p>
                 </a>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
-    {% endblock %}
-
-
-
-    {% block brands %}
-
-
-        <div id="services" class=" slideanim container-fluid text-center">
-            <h2>Brands</h2>
-            <h4>What we offer</h4>
+    </div>
+    {% endblock %} {% block brands %}
+    <div id="services" class=" slideanim container-fluid text-center">
+        <h2>Brands</h2>
+        <h4>What we offer</h4>
+        <br>
+        <div class="row">
+            {% for mark in marks %}
+            <div class="col-sm-3">
+                <a href="marks/marks?marks={{mark[2]}}">
+                    <img style="height: 120px" src={{mark[1]}}/>
+                    <h4> {{mark[0]}}</h4>
+                </a>
+            </div>
+            {% endfor %}
             <br>
+            <br>
+        </div>
+        <!-- about us  -->
+        <div id="about" class=" container-fluid">
             <div class="row">
-                {% for mark in marks %}
-                <div class="col-sm-3">
-                    <a href="marks/marks?marks={{mark[2]}}">
-                	    <img style="height: 120px" src={{mark[1]}}/>
-                	    <h4> {{mark[0]}}</h4>
-                	</a>
+                <div class="col-sm-8">
+                    <h2>About Company Page</h2>
+                    <h4>Lorem ipsum..</h4>
+                    <p>Lorem ipsum..</p>
+                    <button class="btn btn-default btn-lg">Get in Touch</button>
                 </div>
-                {% endfor %}
-                <br>
-                <br>
-            </div>
-            <!-- about us  -->
-            <div id="about" class=" container-fluid">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <h2>About Company Page</h2>
-                        <h4>Lorem ipsum..</h4>
-                        <p>Lorem ipsum..</p>
-                        <button class="btn btn-default btn-lg">Get in Touch</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <span class="glyphicon glyphicon-signal logo"></span>
-                    </div>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-signal logo"></span>
                 </div>
             </div>
-            <div class="slideanim container-fluid bg-grey">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <span class="glyphicon glyphicon-globe logo"></span>
-                    </div>
-                    <div class="col-sm-8">
-                        <h2>Our Values</h2>
-                        <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>
-                        <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
-                    </div>
+        </div>
+        <div class="slideanim container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-globe logo"></span>
+                </div>
+                <div class="col-sm-8">
+                    <h2>Our Values</h2>
+                    <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>
+                    <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
                 </div>
             </div>
-            <!-- Pricing  -->
-            <div id="pricing" class="slideanim container-fluid">
-                <div class="text-center">
-                    <h2>Our Products</h2>
-                    <h4>Choose a product that works for you</h4>
-                </div>
-                <div class="row">
-                    {% for product in products %}
-                    <div class="col-sm-4">
-                        <div class="panel panel-default text-center">
-                            <div class="panel-body" style="padding: 0px;">
-                                <img style="max-width: 100%" src="{{product[1]}}" />
-                            </div>
-                            <div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
-                                <h1 style="font-size: 30px;">{{product[0]}}</h1>
-                                <h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{product[2]}}</h4>
-                            </div>
-                  
+        </div>
+    </div>
+        {% endblock %} {% block contact%}
+        <div id="contact" class="slideanim container-fluid bg-grey">
+            <h2 class="text-center">CONTACT</h2>
+            <div class="row">
+                <div class="col-sm-5">
+                    <br/>
+                    <p style="text-align: left;">Contact us and we'll get back to you within 24 hours.</p>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p style="text-align: left;"><span class="glyphicon glyphicon-map-marker"></span> Gaza, Palestine</p>
+                            <p style="text-align: left;"><span class="glyphicon glyphicon-print"></span> +00 972599831411</p>
+                            <p style="text-align: left;"><span class="glyphicon glyphicon-envelope"></span> info@linefood.com</p>
+                            <p style="text-align: left;"><span class="fa fa-facebook-square"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
+                        </div>
+                        <div class="col-md-5">
+                            <p style="text-align: left;"><span class="glyphicon glyphicon-phone"></span> +00 972599831411</p>
+                            <p style="text-align: left;"><span class="glyphicon glyphicon-phone-alt"></span> +00 972599831411</p>
+                            <p style="text-align: left;"><span class="fa fa-twitter-square"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
+                            <p style="text-align: left;"><span class="fa fa-instagram"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
                         </div>
                     </div>
-                    {% endfor %}
-                  
                 </div>
-            </div>
-
-
-            {% endblock %}
-
-
-    {% block contact%}
-
-            <div id="contact" class="slideanim container-fluid bg-grey">
-                <h2 class="text-center">CONTACT</h2>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <br/>
-                        <p style="text-align: left;">Contact us and we'll get back to you within 24 hours.</p>
-                        <br/>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <p style="text-align: left;"><span class="glyphicon glyphicon-map-marker"></span> Gaza, Palestine</p>
-                                <p style="text-align: left;"><span class="glyphicon glyphicon-print"></span> +00 972599831411</p>
-                                <p style="text-align: left;"><span class="glyphicon glyphicon-envelope"></span> info@linefood.com</p>
-                                <p style="text-align: left;"><span class="fa fa-facebook-square"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
-                            </div>
-                            <div class="col-md-5">
-                                <p style="text-align: left;"><span class="glyphicon glyphicon-phone"></span> +00 972599831411</p>
-                                <p style="text-align: left;"><span class="glyphicon glyphicon-phone-alt"></span> +00 972599831411</p>
-                                <p style="text-align: left;"><span class="fa fa-twitter-square"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
-                                <p style="text-align: left;"><span class="fa fa-instagram"></span> <a href="https://www.fb.com/linefood" title="Visit us">@linefood</a></p>
-                            </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                         </div>
                     </div>
-                    <div class="col-sm-7">
-                        <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="phone" name="phone" placeholder="phone" type="number" required>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" id="phone" name="phone" placeholder="phone" type="number" required>
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" id="city" name="city" placeholder="city" type="text" required>
-                            </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="city" name="city" placeholder="city" type="text" required>
                         </div>
-                        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="8"></textarea>
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-12 form-group">
-                                <button class="btn btn-default pull-right" type="submit">Send</button>
-                            </div>
+                    </div>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="8"></textarea>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-default pull-right" type="submit">Send</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        {% endblock %} {% block map%}
+        <div id="googleMap" class="container-fluid" style="height:400px;"></div>
+        <script>
+        function myMap() {
 
-
-    {% endblock %}
-
-
-    {% block map%}
-     <div id="googleMap" style="height:400px;width:100%;"></div>
-            <script>
-            function myMap() {
-
-                var myCenter = new google.maps.LatLng(31.511142، 34.469895);
-                var mapProp = {
-                    center: myCenter,
-                    zoom: 12,
-                    scrollwheel: false,
-                    draggable: false,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-                var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                var marker = new google.maps.Marker({
-                    position: myCenter
-                });
-                marker.setMap(map);
-            }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EUjJJNYm78jkFIkvadKwkbeFPpgTjQk&callback=myMap"></script>
-
-
-            {% endblock%}
+            var myCenter = new google.maps.LatLng(31.511142,34.469895);
+            var mapProp = {
+                center: myCenter,
+                zoom: 12,
+                scrollwheel: false,
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EUjJJNYm78jkFIkvadKwkbeFPpgTjQk&callback=myMap"></script>
+        {% endblock %} {% block product%}
+        <div id="pricing" class="slideanim container-fluid">
+            <div class="text-center">
+                <h2>Our Products</h2>
+                <h4>Choose a product that works for you</h4>
+            </div>
+            <div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div  class="item itemm active">
+                        <div class="col-xs-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-body" style="padding: 0px;">
+                                    <img style="max-width: 100%" src="{{products[0][1]}}" />
+                                </div>
+                                <div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
+                                    <h1 style="font-size: 30px;">{{products[0][0]}}</h1>
+                                    <h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{products [0][2]}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for product in products %} {% if loop.index >= 2 %}
+                    <div class="item itemm">
+                        <div class="col-xs-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-body" style="padding: 0px;">
+                                    <img style="max-width: 100%" src="{{product[1]}}" />
+                                </div>
+                                <div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
+                                    <h1 style="font-size: 30px;">{{product[0]}}</h1>
+                                    <h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{product[2]}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %}
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        {% endblock %}  
