@@ -249,5 +249,44 @@ footer .glyphicon {
     color: #e7001b;
 }
 
-
-
+/* Mai Updates  */
+.custom-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+ body {
+    margin: 0 !important;
+}
+.custom-navbar {
+    min-height: 80px;
+}
+.custom-main-container {
+    padding-top: 80px;
+    background-color: #fff;
+}
+.custom-navbar .custom-navbar-nav li a {
+    font-size: 18px;
+}
+.custom-navbar .custom-navbar-nav li a:hover {
+    font-size: 19px !important;
+}
+.custom-navbar-nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .custom-navbar-nav {
+        display: block;
+    }
+    .custom-navbar-header {
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+    .custom-navbar-toggle {
+        margin-top: 24px;
+        margin-right: 0;
+    }
+}

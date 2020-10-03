@@ -51,11 +51,11 @@
  -->
 
 
- {% extends "www/subparent.html" %} 
-     {%block newsdetails %}
+ {% extends "www/parent.html" %} 
+
+ {%block newsdetails %}
     
-    <div style="     margin-top: 6%; 
-" class=" bg-grey container-fluid text-center">
+    <div style="margin-top: 6%; " class=" bg-grey container-fluid text-center">
         
         <h1 style="text-align:center; color:#D20000; font-family: " id="title"></h1>
         <br>
@@ -71,7 +71,7 @@
     window.onload = function() {
 
         $.ajax({
-            url: "http://localhost:8000/api/method/foodline.www.news.news.ping",
+            url: "http://localhost:8000/api/method/foodline.www.news.news.get_news",
             method: 'POST',
             data: {
                 name: news_name

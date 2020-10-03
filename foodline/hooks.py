@@ -122,4 +122,3 @@ role_home_page = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "foodline.event.get_events"
 # }
-

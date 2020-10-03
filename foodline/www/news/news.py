@@ -8,5 +8,5 @@ def get_context(context):
 
 
 @frappe.whitelist(allow_guest=True)
-def ping(name):
+def get_news(name):
     return frappe.db.sql("select title,image,subject from `tabNews` where name ='"+name+"'")

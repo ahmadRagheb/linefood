@@ -1,7 +1,7 @@
 // Copyright (c) 2017, ahmad ragheb and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Trade Mark', {
+frappe.ui.form.on('Trademark', {
 	refresh: function(frm) {
 
 	}
