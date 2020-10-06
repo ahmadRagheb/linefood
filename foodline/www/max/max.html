@@ -1,48 +1,12 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function() {
-    	$("#show").click(function() {
-        // $.get("read", function(data, status){
-        //     alert("Data: " + data + "\nStatus: " + status);
-        // });
-        // alert("rrr");
-        $.ajax({
-            url: "http://localhost:8000/api/resource/Products",
-            method: 'GET',
-            success: function(result) {
-            	console.log(result);
-            	alert("ggg");
-                // $("#div1").html(result);
-            }
-        });
-    });
-        // $("#hide").click(function() {
-        //     $("#mzn").hide();
-        // });
-        // $("#show").click(function() {
-        //     $("#mzn").show();
-        // });
-    });
+{% extends "www/main.html" %}
 
-    
-    </script>
-</head>
+<p id="mzn">If you click on the "Hide" button, I will disappear.</p>
+<button>call</button>
+<h>#e7001b</h>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
 
-<body>
-    <p id="mzn">If you click on the "Hide" button, I will disappear.</p>
-    <button>call</button>
-    <h>#e7001b</h>
-    <button id="hide">Hide</button>
-    <button id="show">Show</button>
-
-    {% for product in products %}
-    	   {{product[1]}}
-    {% endfor %}
-
-</body>
-
-</html>
+{% for product in products %}
+	{{product[1]}}
+{% endfor %}

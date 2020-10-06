@@ -1,107 +1,23 @@
-<!-- <!DOCTYPE html>
-<html>
+{% extends "www/main.html" %}
 
-<head>
-    <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-
-<body>
-    <div style="
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);">
-
-        <h1 style="text-align:center;" id="title"></h1>
-        <img style=" display: block;margin: auto; width: 40%; " id="image" src="" />
-        <h1 style="text-align:center;" id="subject"></h1>
-    </div>
-    <script type="text/javascript">
-    var news_name = location.href.substring(location.href.lastIndexOf('=') + 1);
-
-    window.onload = function() {
-
-        $.ajax({
-            url: "http://localhost:8000/api/method/foodline.www.news.news.ping",
-            method: 'POST',
-            data: {
-                name: news_name
-            },
-            success: function(result) {
-                var title = document.getElementById('title');
-                var image = document.getElementById('image');
-                var subject = document.getElementById('subject');
-                title.innerHTML = result.message[0][0];
-                image.src = result.message[0][1];
-                subject.innerHTML = result.message[0][2];
-
-                console.log(result);
-                // alert(result.message);
-                // $("#div1").html(result);
-            }
-        });
-    }
-    </script>
-</body>
-
-</html>
- -->
-
-
- {% extends "www/subparent.html" %} 
- {%block newsdetails %}
-    
-    <div style="     margin-top: 6%; 
-" class=" bg-grey container-fluid text-center">
-        
-           <div class="row">
-                    {% for product in products %}
-                    <div class="col-sm-4">
-                        <div class="panel panel-default text-center">
-                            <div class="panel-body" style="padding: 0px;">
-                                <img style="max-width: 100%" src="{{product[1]}}" />
-                            </div>
-                            <div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
-                                <h1 style="font-size: 30px;">{{product[0]}}</h1>
-                                <h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{product[2]}}</h4>
-                            </div>
-                  
-                        </div>
-                    </div>
-                    {% endfor %}
-                  
-                </div>
-    </div>
-
-    <script type="text/javascript">
-    var news_name = location.href.substring(location.href.lastIndexOf('=') + 1);
-
-    window.onload = function() {
-
-        $.ajax({
-            url: "http://localhost:8000/api/method/foodline.www.marks.marks.ping",
-            method: 'POST',
-            data: {
-                name: news_name
-            },
-            success: function(result) {
-                // var title = document.getElementById('title');
-                // var image = document.getElementById('image');
-                // var subject = document.getElementById('subject');
-                // title.innerHTML = result.message[0][0];
-                // image.src = result.message[0][1];
-                // subject.innerHTML = result.message[0][2];
-
-                console.log(result);
-                // alert(result.message);
-                // $("#div1").html(result);
-            }
-        });
-    }
-    </script>
-
-
- {% endblock %}
+<!-- Start of News-Details Block -->
+{%block newsdetails %} 
+	<div style="margin-top: 6%" class=" bg-grey container-fluid text-center">
+		<div class="row">
+			{% for product in products %}
+			<div class="col-sm-4">
+				<div class="panel panel-default text-center">
+					<div class="panel-body" style="padding: 0px;">
+						<img style="max-width: 100%" src="{{product[1]}}" />
+					</div>
+					<div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
+						<h1 style="font-size: 30px;">{{product[0]}}</h1>
+						<h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{product[2]}}</h4>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+<!-- End of News-Details Block -->
