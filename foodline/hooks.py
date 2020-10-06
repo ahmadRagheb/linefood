@@ -19,11 +19,13 @@ app_license = "MIT"
 # app_include_js = "/assets/foodline/js/foodline.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/foodline/css/foodline.css"
-# web_include_js = "/assets/foodline/js/foodline.js"
+# web_include_css = "/assets/foodline/css/main-style.css"
+# web_include_js = "/assets/foodline/js/main-scripts.js"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
+# page_js = {"main" : "public/js/main-scripts.js"}
+
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}

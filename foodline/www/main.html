@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>LineFood</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Font Awesome -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<!-- Bootstap css & js -->
+			<!-- css -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			
+			<!-- js -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!-- Fontes  -->
+			<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+		<!-- w3schools -->
+			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+		<!-- Custom CSS  -->
+			<link type="text/css" rel="stylesheet" href="/assets/foodline/css/main-style.css">
+
+	</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+		<!-- Start of Navbar Section  -->
+			<nav class="navbar navbar-default navbar-fixed-top custom-navbar">
+				<div class="container">
+					<div class="navbar-header custom-navbar-header">
+						<img class="custom-logo" src="assets/foodline/images/logo.png" />
+						<button type="button" class="navbar-toggle custom-navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right custom-navbar-nav">
+							<li><a href="#portfolio">NEWS</a></li>
+							<li><a href="#services">Brands</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="#pricing">PRICING</a></li>
+							<li><a href="#contact">CONTACT</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		<!-- End of Navbar Section  -->
+		
+		<!-- Start of Blocks Section -->
+			{% block newsdetails %}{% endblock %}
+			{% block slider %}{% endblock %}
+			{% block news %}{% endblock %}
+			{% block brands %}{% endblock %}
+			{% block product %}{% endblock %}
+			{% block contact %}{% endblock %}
+			{% block map %}{% endblock %}
+		<!-- End of Blocks Section -->
+
+		<!-- Start of Footer Section  -->
+			<footer class="slideanim container-fluid text-center">
+				<a href="#myPage" title="To Top">
+					<span class="glyphicon glyphicon-chevron-up"></span>
+				</a>
+				<p> All Copy Right to Linefood</p>
+			</footer>
+		<!-- End of Footer Section  -->
+		
+		<!-- Map  -->
+			<script>
+				function myMap() {
+					var myCenter = new google.maps.LatLng(31.511142,34.469895);
+					var mapProp = {
+						center: myCenter,
+						zoom: 12,
+						scrollwheel: false,
+						draggable: false,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+					var marker = new google.maps.Marker({
+						position: myCenter
+					});
+					marker.setMap(map);
+				}
+			</script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3EUjJJNYm78jkFIkvadKwkbeFPpgTjQk&callback=myMap"></script>
+			
+		<!-- Custom JS  -->
+			<script type="text/javascript" src="/assets/foodline/js/main-scripts.js"></script>
+	</body>
+</html>
