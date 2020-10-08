@@ -1,0 +1,53 @@
+{
+ "autoname": "MARK.###",
+ "creation": "2017-05-16 15:14:36.480901",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "trade_mark_name",
+  "arabic_name",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "trade_mark_name",
+   "fieldtype": "Data",
+   "label": "Trade mark name"
+  },
+  {
+   "fieldname": "arabic_name",
+   "fieldtype": "Data",
+   "label": "Trade mark name in Arabic"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  }
+ ],
+ "modified": "2020-10-03 13:23:10.126839",
+ "modified_by": "Administrator",
+ "module": "linefood",
+ "name": "Trademark",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "trade_mark_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "trade_mark_name",
+ "track_changes": 1
+}
