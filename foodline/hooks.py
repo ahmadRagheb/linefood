@@ -19,8 +19,54 @@ app_license = "MIT"
 # app_include_js = "/assets/foodline/js/foodline.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/foodline/css/main-style.css"
-# web_include_js = "/assets/foodline/js/main-scripts.js"
+# "/assets/foodline/css/main-style.css",
+web_include_css = [
+    "/assets/foodline/css/animate.css",
+    "/assets/foodline/css/bootstrap.css",
+    "/assets/foodline/css/flexslider.css",
+    "/assets/foodline/css/font-awesome.css",
+    "/assets/foodline/css/jquery-ui.css",
+    "/assets/foodline/css/magnific-popup.css",
+    "/assets/foodline/css/owl.carousel.css",
+    "/assets/foodline/css/responsive.css",
+    "/assets/foodline/css/shortcodes.css",
+    "/assets/foodline/css/style.css"
+]
+# "/assets/foodline/js/main-scripts.js",
+web_include_js = [
+    "/assets/foodline/js/jquery.min.js",
+    "/assets/foodline/js/tether.min.js",
+    "/assets/foodline/js/bootstrap.min.js",
+    "/assets/foodline/js/jquery.easing.js",
+    "/assets/foodline/js/parallax.js",
+    "/assets/foodline/js/jquery-waypoints.js",
+    "/assets/foodline/js/jquery-countTo.js",
+    "/assets/foodline/js/jquery.countdown.js",
+    "/assets/foodline/js/jquery.flexslider-min.js",
+    "/assets/foodline/js/images-loaded.js",
+    "/assets/foodline/js/jquery.isotope.min.js",
+    "/assets/foodline/js/magnific.popup.min.js",
+    "/assets/foodline/js/jquery.hoverdir.js",
+    "/assets/foodline/js/owl.carousel.min.js",
+    "/assets/foodline/js/equalize.min.js",
+    "/assets/foodline/js/gmap3.min.js",
+    "/assets/foodline/js/jquery-ui.js",
+    "/assets/foodline/js/jquery.cookie.js",
+    "/assets/foodline/js/main.js",
+    "/assets/foodline/rev-slider/js/jquery.themepunch.tools.min.js",
+    "/assets/foodline/rev-slider/js/jquery.themepunch.revolution.min.js",
+    "/assets/foodline/js/rev-slider.js",
+    "/assets/foodline/js/switcher.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.actions.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.carousel.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.kenburn.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.layeranimation.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.migration.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.navigation.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.parallax.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.slideanims.min.js",
+    "/assets/foodline/rev-slider/js/extensions/revolution.extension.video.min.js"
+]
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
