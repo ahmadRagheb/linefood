@@ -26,6 +26,10 @@
       {%- endblock -%}
     <!-- End of Navbar Section  -->
 
+      {% block slider %}
+        {% include "templates/includes/slider/slider.html" %}
+      {% endblock %}
+
     <!-- Start of Content Section  -->
       {% block content %}{% endblock %}
     <!-- Start of Content Section  -->
@@ -35,7 +39,6 @@
         {% include "templates/includes/footer/footer.html" %}
       {%- endblock -%}
     <!-- Start of Footer Section  -->
-
   </div>
 
 

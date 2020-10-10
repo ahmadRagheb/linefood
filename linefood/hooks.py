@@ -82,12 +82,13 @@ web_include_js = [
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "index"
 
 # website user home page (by Role)
 # role_home_page = {
 #	"Role": "home_page"
 # }
+
 role_home_page = {
     "Guest": "index"
 }
