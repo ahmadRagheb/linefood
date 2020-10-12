@@ -21,16 +21,11 @@ app_license = "MIT"
 # include js, css files in header of web template
 # "/assets/linefood/css/main-style.css",
 web_include_css = [
-    "/assets/linefood/css/animate.css",
     "/assets/linefood/css/bootstrap.css",
-    "/assets/linefood/css/flexslider.css",
-    "/assets/linefood/css/font-awesome.css",
-    "/assets/linefood/css/jquery-ui.css",
-    "/assets/linefood/css/magnific-popup.css",
-    "/assets/linefood/css/owl.carousel.css",
+    "/assets/linefood/css/style.css",
     "/assets/linefood/css/responsive.css",
-    "/assets/linefood/css/shortcodes.css",
-    "/assets/linefood/css/style.css"
+    "/assets/linefood/css/animate.css",
+    "/assets/linefood/css/colors/color1.css",
 ]
 # "/assets/linefood/js/main-scripts.js",
 web_include_js = [
@@ -82,16 +77,16 @@ web_include_js = [
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "index"
+home_page = "line_food"
 
 # website user home page (by Role)
 # role_home_page = {
 #	"Role": "home_page"
 # }
 
-role_home_page = {
-    "Guest": "index"
-}
+# role_home_page = {
+#     "Guest": "home"
+# }
 
 
 # Website user home page (by function)
