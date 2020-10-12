@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Food</title>
+
+  <!-- Web includes CSS  -->
+  {%- for link in web_include_css %}
+  <link type="text/css" rel="stylesheet" href="{{ link | abs_url }}">
+  {%- endfor -%}
+
+</head>
+
+<body class="header_sticky header-style-2 topbar-style-2 topbar-width-94 topbar-divider has-menu-extra">
+  <!-- Start Of Preloader Section -->
+  <div id="loading-overlay">
+    <div class="loader"></div>
+  </div>
+  <!-- Start Of Preloader Section -->
+
+
+  <div class="boxed">
+    <!-- Start of Navbar Section  -->
+    {%- block navbar -%}
+      {% include "templates/includes/navbar/navbar.html" %}
+    {%- endblock -%}
+    <!-- End of Navbar Section  -->
+
+    <!-- Start Slidern  -->
+
+    {% block foodline_slider %}{% endblock %}
+
+    <!-- Start of Content Section  -->
+    {% block foodline_content %}{% endblock %}
+    <!-- Start of Content Section  -->
+
+    <!-- Start of Footer Section  -->
+    {%- block footer -%}
+    {% include "templates/includes/footer/footer.html" %}
+    {%- endblock -%}
+    <!-- Start of Footer Section  -->
+  </div>
+
+
+  <!-- Custom Js  -->
+  {%- for link in web_include_js %}
+  <script type="text/javascript" src="{{ link | abs_url }}"></script>
+  {%- endfor -%}
+
+  <!-- {% block custom_base_scripts %}
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIEU6OT3xqCksCetQeNLIPps6-AYrhq-s&region=GB"></script>
+    {% endblock %} -->
+</body>
+
+</html>
