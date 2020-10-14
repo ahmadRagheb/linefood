@@ -1,24 +1,7 @@
 {% extends 'templates/master.html' %}
 
 {% block foodline_slider %}
-	{% if hero == "Default" %}
-		<!-- <h1 style="color: red;">hero is based on Default</h1> -->
-		<div class="hero-container">
-			<div class="hero-img-wrapper">
-				{% if hero_img %}
-					<img src={{hero_img}} alt="hero_img">
-				{% endif %}
-			</div>
-			<div class="caption-div">
-				<p class="title">{{title}}</p>
-				<p class="desc">{{description}}</p>
-			</div>
-		</div>
-	{% endif %}
-	{% if hero == "Slideshow" %}
-		<!-- <h1 style="color: red;">hero is based on Slideshow</h1> -->
-		{% include "templates/includes/slider/slider.html" %}
-	{% endif %}
+	{% include "templates/includes/slider/slider.html" %}
 {% endblock %}
 
 {% block foodline_content %}

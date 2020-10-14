@@ -1,176 +1,71 @@
+{% if hero == "Default" %}
+<div class="hero-container">
+	<div class="hero-img-wrapper">
+		{% if hero_img %}
+		<img src={{hero_img}} alt="hero_img">
+		{% endif %}
+	</div>
+	<div class="caption-div">
+		<p class="title">{{title}}</p>
+		<p class="desc">{{description}}</p>
+	</div>
+</div>
+{% endif %}
+{% if hero == "Slideshow" %}
 <div class="rev_slider_wrapper fullwidthbanner-container">
 	<div id="rev-slider3" class="rev_slider fullwidthabanner">
-		<ul>
-			<!-- Slide 1 -->
-			<li data-transition="random">
-				<!-- Main Image -->
-				<img src="assets/linefood/images/slider/slider-bg-3.jpg" alt="" data-bgposition="center center" data-no-retina>
-			
-				<!-- Layers -->
-				<!-- <div class="tp-caption tp-resizeme text-6e6 font-weight-500 letter-spacing-08"
-					data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['-122','-122','-122','-122']"
-					data-fontsize="['18','18','18','18']"
-					data-lineheight="['36','36','36','36']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="700" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-					In store & Online
-				</div> -->
-			
-				<div class="tp-caption tp-resizeme text-333 font-weight-500 letter-spacing-3"
-				data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
-				data-y="['middle','middle','middle','middle']" data-voffset="['-62','-62','-62','-62']"
-				data-fontsize="['72','72','72','46']"
-				data-lineheight="['80','80','80','50']"
-				data-width="full"
-				data-height="none"
-				data-whitespace="normal"
-				data-transform_idle="o:1;"
-				data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-				data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-				data-mask_in="x:0px;y:[100%];" 
-				data-mask_out="x:inherit;y:inherit;" 
-				data-start="1000" 
-				data-splitin="none" 
-				data-splitout="none" 
-				data-responsive_offset="on">
-					{{title}}
-				</div>
-			
-					<div class="tp-caption tp-resizeme text-6e6 font-weight-300 "
-					data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['3','3','3','3']"
-					data-fontsize="['20','20','20','20']"
-					data-lineheight="['48','48','48','48']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="1000" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-						{{description}}
-					</div>
-			
-				<!-- <div class="tp-caption"
-					data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['72','72','72','72']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="1000" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-					<a href="#" class="themesflat-button has-padding-36 bg-accent has-shadow"><span>SHOP NOW</span></a>
-				</div> -->
-			</li>
-			<!-- /End Slide 1 -->
-			<!-- Slide 2 -->
-			<li data-transition="random">
-				<!-- Main Image -->
-				<img src="assets/linefood/images/slider/slider-bg-2.jpg" alt="" data-bgposition="center center" data-no-retina>
-
-				<!-- Layers -->
-				<!-- <div class="tp-caption tp-resizeme text-333 font-weight-300 text-right"
-					data-x="['right','right','right','center']" data-hoffset="['172','167','167','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['-43','-43','-43','-83']"
-					data-fontsize="['24','24','24','24']"
-					data-lineheight="['72','72','72','72']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="700" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-					NEW TREND 2018
-				</div> -->
-
-				<div class="tp-caption tp-resizeme text-333 font-weight-500 text-right"
-					data-x="['right','right','right','center']" data-hoffset="['5','-5','-5','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['8','8','8','0']"
-					data-fontsize="['52','52','52','40']"
-					data-lineheight="['60','60','60','60']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="1000" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-						{{title}}
-				</div>
-
-				<div class="tp-caption tp-resizeme text-6e6 font-weight-400 text-right"
-					data-x="['right','right','right','center']" data-hoffset="['120','117','117','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['74','77','77','77']"
-					data-fontsize="['18','18','18','16']"
-					data-lineheight="['72','72','72','38']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="1000" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-						{{description}}
-				</div>
-
-				<!-- <div class="tp-caption text-right"
-					data-x="['right','right','right','center']" data-hoffset="['170','170','170','0']"
-					data-y="['middle','middle','middle','middle']" data-voffset="['142','142','142','142']"
-					data-width="full"
-					data-height="none"
-					data-whitespace="normal"
-					data-transform_idle="o:1;"
-					data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-					data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
-					data-mask_in="x:0px;y:[100%];" 
-					data-mask_out="x:inherit;y:inherit;" 
-					data-start="1000" 
-					data-splitin="none" 
-					data-splitout="none" 
-					data-responsive_offset="on">
-					<a href="#" class="themesflat-button has-padding-36 bg-accent has-shadow"><span>SHOP NOW</span></a>
-				</div> -->
-			</li>
-			<!-- /End Slide 2 -->
-		</ul>
+		{% if slides %}
+			<ul>
+				{% for slide in slides %}
+					<!-- Slide 1 -->
+					<li data-transition="random">
+						<!-- Main Image -->
+						<img src={{slide.image}} alt="" data-bgposition="center center" data-no-retina>
+						
+						<div class="tp-caption tp-resizeme text-333 font-weight-500 letter-spacing-3"
+							data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
+							data-y="['middle','middle','middle','middle']" data-voffset="['-62','-62','-62','-62']"
+							data-fontsize="['72','72','72','46']"
+							data-lineheight="['80','80','80','50']"
+							data-width="full"
+							data-height="none"
+							data-whitespace="normal"
+							data-transform_idle="o:1;"
+							data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+							data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+							data-mask_in="x:0px;y:[100%];" 
+							data-mask_out="x:inherit;y:inherit;" 
+							data-start="1000" 
+							data-splitin="none" 
+							data-splitout="none" 
+							data-responsive_offset="on">
+							{{slide.heading}}
+						</div>
+					
+						<div class="tp-caption tp-resizeme text-6e6 font-weight-300 "
+							data-x="['left','left','left','center']" data-hoffset="['7','7','7','0']"
+							data-y="['middle','middle','middle','middle']" data-voffset="['3','3','3','3']"
+							data-fontsize="['20','20','20','20']"
+							data-lineheight="['48','48','48','48']"
+							data-width="full"
+							data-height="none"
+							data-whitespace="normal"
+							data-transform_idle="o:1;"
+							data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+							data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+							data-mask_in="x:0px;y:[100%];" 
+							data-mask_out="x:inherit;y:inherit;" 
+							data-start="1000" 
+							data-splitin="none" 
+							data-splitout="none" 
+							data-responsive_offset="on">
+							{{slide.description}}
+						</div>
+					</li>
+					<!-- /End Slide  -->
+				{% endfor %}
+			</ul>
+		{% endif %}
 	</div> 
 </div>
+{% endif %}
