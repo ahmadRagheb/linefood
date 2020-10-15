@@ -832,6 +832,5 @@ $(function() {
 	flatIsotope();
 	flatCarouselOwl();
 	flatContentBox();
-	console.log("Tesssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssst!!!!!!!!!!!!!");
 });
 })(jQuery);

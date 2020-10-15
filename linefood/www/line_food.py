@@ -15,9 +15,13 @@ def get_context(context):
   context.title = homepage.tag_line
   context.description = homepage.description
 
-  # context.test = frappe.db.sql('''select slideshow_name from `tabWebsite Slideshow`''')
+  # get Slideshow Data 
   doc = frappe.get_doc('Website Slideshow', homepage.slideshow)
   context.slideshow = homepage.slideshow
   context.slides = doc.slideshow_items
+
+  # get Products data 
+  context.products = homepage.products
+  context.items_info = frappe.db.sql("select item_name,item_group from `tabItem`",as_dict=1)
 
   return context
