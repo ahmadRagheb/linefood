@@ -22,6 +22,5 @@ def get_context(context):
 
   # get Products data 
   context.products = homepage.products
-  context.items_info = frappe.db.sql("select item_name,item_group from `tabItem`",as_dict=1)
 
   return context
