@@ -29,6 +29,8 @@ def get_context(context):
   context.copyright = setting.copyright
   context.address = setting.address
   context.footer_items = setting.footer_items
+  context.favicon = setting.favicon
+  
 
 
   return context
