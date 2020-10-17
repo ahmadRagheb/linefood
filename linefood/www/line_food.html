@@ -1,7 +1,7 @@
 {% extends 'templates/master.html' %}
 
 {% block foodline_slider %}
-	{% include "templates/includes/slider/slider.html" %}
+{% include "templates/includes/slider/slider.html" %}
 {% endblock %}
 
 {% block foodline_content %}
@@ -128,41 +128,41 @@
 				<div class="divider h40"></div>
 				<div class="product-content product-fourcolumn clearfix">
 					{% if products %}
-						<ul class="product style2 isotope-product clearfix">
-							{% for product in products %}
-								{% set item_g = frappe.db.get_value('Item', product.item_code , 'item_group') %}
-									<li class="product-item {{item_g}}">
-										<div class="product-thumb clearfix">
-											<a href="#">
-												<img src={{ product.image or "assets/linefood/images/shop/sh-4/1.jpg"}} alt="image">
-											</a>
-										</div>
-										<div class="product-info clearfix">
-											<span class="product-title">{{product.description}}</span>
-											<div class="price">
-												<ins>
-													<span class="amount">$19.00</span>
-												</ins>
-											</div>
-											<ul class="flat-color-list width-14">
-												<li>
-													<a href="#" class="red"></a>
-												</li>
-												<li>
-													<a href="#" class="blue"></a>
-												</li>
-												<li>
-													<a href="#" class="black"></a>
-												</li>
-											</ul>
-										</div>
-										<div class="add-to-cart text-center">
-											<a href="#">ADD TO CART</a>
-										</div>
-										<a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+					<ul class="product style2 isotope-product clearfix">
+						{% for product in products %}
+						{% set item_g = frappe.db.get_value('Item', product.item_code , 'item_group') %}
+						<li class="product-item {{item_g}}">
+							<div class="product-thumb clearfix">
+								<a href="#">
+									<img src={{ product.image or "assets/linefood/images/shop/sh-4/1.jpg"}} alt="image">
+								</a>
+							</div>
+							<div class="product-info clearfix">
+								<span class="product-title">{{product.description}}</span>
+								<div class="price">
+									<ins>
+										<span class="amount">$19.00</span>
+									</ins>
+								</div>
+								<ul class="flat-color-list width-14">
+									<li>
+										<a href="#" class="red"></a>
 									</li>
-							{% endfor %}
-						</ul>
+									<li>
+										<a href="#" class="blue"></a>
+									</li>
+									<li>
+										<a href="#" class="black"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="add-to-cart text-center">
+								<a href="#">ADD TO CART</a>
+							</div>
+							<a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+						</li>
+						{% endfor %}
+					</ul>
 					{% endif %}
 				</div>
 			</div>
@@ -170,6 +170,42 @@
 	</div>
 </section>
 <!-- End of Products Section  -->
+
+<!-- Start of New Latest section -->
+<section class="blog-posts grid-posts">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="title-section margin-bottom-41">
+					<h2 class="title">Latest Bolg</h2>
+				</div>
+				<div class="post-wrap margin-bottom-26">
+					<div class="grid three">
+						{% for blog_post in blog_posts %}
+							<article class="post clearfix">
+								<div class="featured-post">
+									<img src="https://485758.smushcdn.com/622655/wp-content/uploads/2017/10/create-cover-images.jpeg?lossy=1&strip=1&webp=1" alt="image">
+								</div>
+								<div class="content-post">
+									<div class="title-post">
+										<h2><a href={{blog_post.route}}>{{blog_post.title}}</a></h2>
+									</div><!-- /.title-post -->
+									<div class="entry-post">
+										<p>{{blog_post.blog_intro}}...</p>
+										<div class="more-link">
+											<a href={{blog_post.route}}>Read More</a>
+										</div>
+									</div>
+								</div><!-- /.content-post -->
+							</article><!-- /.post -->
+						{% endfor %}
+					</div><!-- /.grid -->
+				</div><!-- /.post-wrap -->
+			</div><!-- /.col-md-12 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section>
+<!-- End of New Latest section  -->
 
 <!-- Start of Newsletter Section  -->
 <section class="flat-row mail-chimp">
