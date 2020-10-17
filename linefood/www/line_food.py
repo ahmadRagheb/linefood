@@ -23,4 +23,12 @@ def get_context(context):
   # get Products data 
   context.products = homepage.products
 
+  # get website setting Data
+  setting = frappe.get_doc('Website Settings')
+  context.logo = setting.banner_image
+  context.copyright = setting.copyright
+  context.address = setting.address
+  context.footer_items = setting.footer_items
+
+
   return context
