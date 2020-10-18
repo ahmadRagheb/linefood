@@ -32,7 +32,7 @@ def get_context(context):
   context.favicon = setting.favicon
   
   # get Blog Post Data 
-  blog = frappe.db.sql("select title,blog_intro,route,content from `tabBlog Post`",as_dict=1)
+  blog = frappe.db.sql("select title,blog_intro,route,content from `tabBlog Post` where published=1",as_dict=1)
   context.blog_posts = blog
 
   return context

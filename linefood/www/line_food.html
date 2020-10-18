@@ -182,22 +182,24 @@
 				<div class="post-wrap margin-bottom-26">
 					<div class="grid three">
 						{% for blog_post in blog_posts %}
-							<article class="post clearfix">
-								<div class="featured-post">
-									<img src="https://485758.smushcdn.com/622655/wp-content/uploads/2017/10/create-cover-images.jpeg?lossy=1&strip=1&webp=1" alt="image">
-								</div>
-								<div class="content-post">
-									<div class="title-post">
-										<h2><a href={{blog_post.route}}>{{blog_post.title}}</a></h2>
-									</div><!-- /.title-post -->
-									<div class="entry-post">
-										<p>{{blog_post.blog_intro}}...</p>
-										<div class="more-link">
-											<a href={{blog_post.route}}>Read More</a>
-										</div>
+							{% if loop.index <= 6 %}
+								<article class="post clearfix">
+									<div class="featured-post">
+										<img src="https://485758.smushcdn.com/622655/wp-content/uploads/2017/10/create-cover-images.jpeg?lossy=1&strip=1&webp=1" alt="image">
 									</div>
-								</div><!-- /.content-post -->
-							</article><!-- /.post -->
+									<div class="content-post">
+										<div class="title-post">
+											<h2><a href={{blog_post.route}}>{{blog_post.title}}</a></h2>
+										</div><!-- /.title-post -->
+										<div class="entry-post">
+											<p>{{blog_post.blog_intro}}...</p>
+											<div class="more-link">
+												<a href={{blog_post.route}}>Read More</a>
+											</div>
+										</div>
+									</div><!-- /.content-post -->
+								</article><!-- /.post -->
+								{% endif %}
 						{% endfor %}
 					</div><!-- /.grid -->
 				</div><!-- /.post-wrap -->
