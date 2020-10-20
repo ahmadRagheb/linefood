@@ -185,7 +185,7 @@
 							{% if loop.index <= 6 %}
 								<article class="post clearfix">
 									<div class="featured-post">
-										<img src={{blog_post.image}} alt="image">
+										<img src={{ blog_post.image if blog_post.image else "assets/linefood/images/blog/11.jpg"}} alt="image">
 									</div>
 									<div class="content-post">
 										<div class="title-post">
