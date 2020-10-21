@@ -4,15 +4,15 @@ include *.json
 include *.md
 include *.py
 include *.txt
-recursive-include foodline *.css
-recursive-include foodline *.csv
-recursive-include foodline *.html
-recursive-include foodline *.ico
-recursive-include foodline *.js
-recursive-include foodline *.json
-recursive-include foodline *.md
-recursive-include foodline *.png
-recursive-include foodline *.py
-recursive-include foodline *.svg
-recursive-include foodline *.txt
-recursive-exclude foodline *.pyc
+recursive-include linefood *.css
+recursive-include linefood *.csv
+recursive-include linefood *.html
+recursive-include linefood *.ico
+recursive-include linefood *.js
+recursive-include linefood *.json
+recursive-include linefood *.md
+recursive-include linefood *.png
+recursive-include linefood *.py
+recursive-include linefood *.svg
+recursive-include linefood *.txt
+recursive-exclude linefood *.pyc

@@ -1,0 +1,23 @@
+<!-- {% extends "www/main.html" %} -->
+
+<!-- Start of News-Details Block -->
+{%block newsdetails %} 
+	<div style="margin-top: 6%" class=" bg-grey container-fluid text-center">
+		<div class="row">
+			{% for product in products %}
+			<div class="col-sm-4">
+				<div class="panel panel-default text-center">
+					<div class="panel-body" style="padding: 0px;">
+						<img style="max-width: 100%" src="{{product[1]}}" />
+					</div>
+					<div class="panel-heading" style="border-bottom: 0px solid transparent;padding: 1px 0px;">
+						<h1 style="font-size: 30px;">{{product[0]}}</h1>
+						<h4 style="color: #f5f5f5;margin-bottom: 0px; ">{{product[2]}}</h4>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
+<!-- End of News-Details Block -->

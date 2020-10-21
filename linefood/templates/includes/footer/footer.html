@@ -1,0 +1,59 @@
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3">
+				<div class="widget widget-link">
+					<ul>
+						{% for item in footer_items %}
+							{% if item.parent_label == 'first' %}
+								<li><a href={{item.url}}>{{item.label}}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div><!-- /.widget -->
+			</div><!-- /.col-md-3 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="widget widget-link link-login">
+					<ul>
+						{% for item in footer_items %}
+							{% if item.parent_label == 'second' %}
+								<li><a href={{item.url}}>{{item.label}}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div><!-- /.widget -->
+			</div><!-- /.col-md-3 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="widget widget-link link-faq">
+					<ul>
+						{% for item in footer_items %}
+							{% if item.parent_label == 'third' %}
+								<li><a href={{item.url}}>{{item.label}}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div><!-- /.widget -->
+			</div><!-- /.col-md-3 -->
+			<div class="col-sm-6 col-md-3">
+				<div class="widget widget-brand">
+					<div class="logo logo-footer">
+			 			<a href="index.html"><img src={{logo}} alt="image" width="107" height="24"></a>
+					</div>
+					<ul class="flat-contact" id="address_li">
+						{{address}}
+					</ul><!-- /.flat-contact -->
+				</div><!-- /.widget -->
+			</div><!-- /.col-md-3 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</footer><!-- /.footer -->
+
+<div class="footer-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="copyright text-center">Copyright @2018 <a href="#">{{copyright}}</a></p>
+			</div>
+		</div>
+	</div>
+</div>

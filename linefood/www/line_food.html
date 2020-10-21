@@ -1,0 +1,246 @@
+{% extends 'templates/master.html' %}
+
+{% block foodline_slider %}
+{% include "templates/includes/slider/slider.html" %}
+{% endblock %}
+
+{% block foodline_content %}
+<!-- Start of Image Box Section  -->
+<section class="flat-row row-image-box">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="wrap-carousel-box">
+					<div class="flat-image-box flat-carousel-box style-1 data-effect div-h22 clearfix" data-auto="true" data-column="4" data-column2="2" data-column3="1" data-gap="20" >
+						<div class="owl-carousel owl-theme">
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-1-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Men’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-2-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Clothing’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-3-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For woMen’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-1-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Men’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-2-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Clothing’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-3-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For woMen’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-1-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Men’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+							<div class="item data-effect-item">
+								<div class="inner">
+									<div class="thumb">
+										<img src="assets/linefood/images/image-box/imgbox-2-450x320.jpg" alt="Image">
+										<div class="elm-btn">
+											<a href="#" class="themesflat-button bg-white width-150">For Clothing’s</a>
+										</div>
+										<div class="overlay-effect bg-color-2"></div>
+									</div>
+								</div>
+							</div>
+						</div> <!-- /.owl-carousel  -->                         
+					</div>
+				</div>                            
+			</div>
+		</div>
+	</div><!-- /.container -->
+</section>
+<!-- End of Image Box Section  -->
+
+<!-- Start of Products Section  -->
+<section class="flat-row row-product-project shop-collection style1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="title-section margin-bottom-41">
+					<h2 class="title">Product</h2>
+				</div>
+				<ul class="flat-filter style-1 text-center max-width-682 clearfix">
+					<li class="active"><a href="#" data-filter="*">All Product</a></li>
+					<li><a href="#" data-filter=".Clothing">Clothing</a></li>
+					<li><a href="#" data-filter=".shoes">Shoes</a></li>
+					<li><a href="#" data-filter=".Bags">Bags</a></li>
+					<li><a href="#" data-filter=".Accessories">Accessories</a></li>
+				</ul>
+				<div class="divider h40"></div>
+				<div class="product-content product-fourcolumn clearfix">
+					{% if products %}
+					<ul class="product style2 isotope-product clearfix">
+						{% for product in products %}
+						{% set item_g = frappe.db.get_value('Item', product.item_code , 'item_group') %}
+						<li class="product-item {{item_g}}">
+							<div class="product-thumb clearfix">
+								<a href="#">
+									<img src={{ product.image or "assets/linefood/images/shop/sh-4/1.jpg"}} alt="image">
+								</a>
+							</div>
+							<div class="product-info clearfix">
+								<span class="product-title">{{product.description}}</span>
+								<div class="price">
+									<ins>
+										<span class="amount">$19.00</span>
+									</ins>
+								</div>
+								<ul class="flat-color-list width-14">
+									<li>
+										<a href="#" class="red"></a>
+									</li>
+									<li>
+										<a href="#" class="blue"></a>
+									</li>
+									<li>
+										<a href="#" class="black"></a>
+									</li>
+								</ul>
+							</div>
+							<div class="add-to-cart text-center">
+								<a href="#">ADD TO CART</a>
+							</div>
+							<a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+						</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End of Products Section  -->
+
+<!-- Start of New Latest section -->
+<section class="blog-posts grid-posts">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="title-section margin-bottom-41">
+					<h2 class="title">Latest Bolg</h2>
+				</div>
+				<div class="post-wrap margin-bottom-26">
+					<div class="grid three">
+						{% for blog_post in blog_posts %}
+							{% if loop.index <= 6 %}
+								<article class="post clearfix">
+									<div class="featured-post">
+										<img src={{ blog_post.image if blog_post.image else "assets/linefood/images/blog/11.jpg"}} alt="image">
+									</div>
+									<div class="content-post">
+										<div class="title-post">
+											<h2><a href={{blog_post.route}}>{{blog_post.title}}</a></h2>
+										</div><!-- /.title-post -->
+										<div class="entry-post">
+											<p>{{blog_post.blog_intro}}...</p>
+											<div class="more-link">
+												<a href={{blog_post.route}}>Read More</a>
+											</div>
+										</div>
+									</div><!-- /.content-post -->
+								</article><!-- /.post -->
+								{% endif %}
+						{% endfor %}
+					</div><!-- /.grid -->
+				</div><!-- /.post-wrap -->
+			</div><!-- /.col-md-12 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section>
+<!-- End of New Latest section  -->
+
+<!-- Start of Newsletter Section  -->
+<section class="flat-row mail-chimp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="text">
+					<h3>Sign up for Send Newsletter</h3>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="subscribe clearfix">
+					<form action="#" method="post" accept-charset="utf-8" id="subscribe-form">
+						<div class="subscribe-content">
+							<div class="input">
+								<input type="email" name="subscribe-email" placeholder="Your Email">
+							</div>
+							<div class="button">
+								<button type="button">SUBCRIBE</button>
+							</div>
+						</div>
+					</form>
+					<ul class="flat-social">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google"></i></a></li>
+						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul><!-- /.flat-social -->
+				</div><!-- /.subscribe -->
+			</div>
+		</div>
+	</div>
+</section><!-- /.mail-chimp -->
+<!-- End of Newsletter Section  -->
+{% endblock %}
