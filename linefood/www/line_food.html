@@ -208,7 +208,45 @@
 	</div><!-- /.container -->
 </section>
 <!-- End of New Latest section  -->
-
+<!-- Start of Homepage sections section -->
+{% if sections %}
+	{% for section in sections %}
+		<section class="blog-posts grid-posts">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-section margin-bottom-41">
+							<h2 class="title">Cards </h2>
+						</div>
+						<div class="post-wrap margin-bottom-26">
+							<div class="grid three">
+								{% for card in section.section_cards %}
+									<article class="post clearfix">
+										<div class="featured-post">
+											<img src={{ card.image if card.image else "assets/linefood/images/blog/11.jpg"}} alt="image">
+										</div>
+										<div class="content-post">
+											<div class="title-post">
+												<h2><a href={{card.route}}>{{card.title}}</a></h2>
+											</div>
+											<div class="entry-post">
+												<p>{{card.subtitle}}...</p>
+												<div class="more-link">
+													<a href={{card.route}}>Read More</a>
+												</div>
+											</div>
+										</div>
+									</article>
+								{% endfor %}
+							</div><!-- /.grid -->
+						</div><!-- /.post-wrap -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section>
+	{% endfor %}
+{% endif %}
+<!-- End of Homepage sections section  -->
 <!-- Start of Newsletter Section  -->
 <section class="flat-row mail-chimp">
 	<div class="container">
@@ -243,4 +281,5 @@
 	</div>
 </section><!-- /.mail-chimp -->
 <!-- End of Newsletter Section  -->
+
 {% endblock %}
