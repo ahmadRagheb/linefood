@@ -166,3 +166,10 @@ home_page = "line_food"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "linefood.event.get_events"
 # }
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [["name", "in",
+                     ["Blog Post-image"]]]
+    }
+]
