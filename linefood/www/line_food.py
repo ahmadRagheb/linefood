@@ -35,4 +35,13 @@ def get_context(context):
   blog = frappe.db.sql("select title,blog_intro,route,image from `tabBlog Post` where published=1",as_dict=1)
   context.blog_posts = blog
 
+  homepage_sections = frappe.get_all('Homepage Section')
+  # context.section_name = homepage_sections.name
+  context.sections = []
+  for homepage_section in homepage_sections:
+    context.sections.append(frappe.get_doc('Homepage Section', homepage_section.name))
+  
+  # sections = frappe.get_list("Homepage Section Card", fields = ["title", "subtitle","image","content" ,"route"], limit=6)
+  # context.sections = sections
+
   return context

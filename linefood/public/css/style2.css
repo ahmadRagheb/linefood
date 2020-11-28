@@ -36,3 +36,18 @@
   font-weight: 300 !important;
   margin-bottom: 0;
 }
+.grid article .featured-post {
+  height: 250px !important;
+}
+.grid article .featured-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.custom-text {
+  white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 25px;
+}
