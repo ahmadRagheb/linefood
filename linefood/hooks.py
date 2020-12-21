@@ -26,6 +26,7 @@ web_include_css = [
     "/assets/linefood/css/responsive.css",
     "/assets/linefood/css/animate.css",
     "/assets/linefood/css/colors/color1.css",
+    "/assets/linefood/css/owl.carousel.min.css",
 ]
 # "/assets/linefood/js/main-scripts.js",
 web_include_js = [

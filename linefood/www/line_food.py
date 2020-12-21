@@ -1,47 +1,64 @@
+# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+# License: GNU General Public License v3. See license.txt
+
 from __future__ import unicode_literals
 import frappe
 
+no_cache = 1
 
 def get_context(context):
-  # context.sliders = frappe.db.sql("select image from `tabSlider`")
-  # context.marks = frappe.db.sql("select trade_mark_name,image,name from `tabTrade Mark`")
-  context.news = frappe.db.sql("select title,image,subject,name from `tabNews`")
-  # context.products = frappe.db.sql("select product_name,image,description,choose_trade_mark from `tabProducts`")
-  context.name = "Maiiiiiiiiiiiiiiiiii"
+	homepage = frappe.get_doc('Homepage')
 
-  homepage = frappe.get_doc('Homepage')
-  context.hero = homepage.hero_section_based_on
-  context.hero_img = homepage.hero_image
-  context.title = homepage.tag_line
-  context.description = homepage.description
+	for item in homepage.products:
+		route = frappe.db.get_value('Item', item.item_code, 'route')
+		if not item.image:
 
-  # get Slideshow Data 
-  doc = frappe.get_doc('Website Slideshow', homepage.slideshow)
-  context.slideshow = homepage.slideshow
-  context.slides = doc.slideshow_items
+			i = frappe.get_doc('Item', item.item_code)
 
-  # get Products data 
-  context.products = homepage.products
+			if i.website_image:
+				item.image = i.website_image
+			elif i.image:
+				item.image = i.image
 
-  # get website setting Data
-  setting = frappe.get_doc('Website Settings')
-  context.logo = setting.banner_image
-  context.copyright = setting.copyright
-  context.address = setting.address
-  context.footer_items = setting.footer_items
-  context.favicon = setting.favicon
-  
-  # get Blog Post Data 
-  blog = frappe.db.sql("select title,blog_intro,route,image from `tabBlog Post` where published=1",as_dict=1)
-  context.blog_posts = blog
+		if route:
+			item.route = '/' + route
 
-  homepage_sections = frappe.get_all('Homepage Section')
-  # context.section_name = homepage_sections.name
-  context.sections = []
-  for homepage_section in homepage_sections:
-    context.sections.append(frappe.get_doc('Homepage Section', homepage_section.name))
-  
-  # sections = frappe.get_list("Homepage Section Card", fields = ["title", "subtitle","image","content" ,"route"], limit=6)
-  # context.sections = sections
+	homepage.title = homepage.title or homepage.company
+	context.title = homepage.title
+	context.homepage = homepage
 
-  return context
+	if homepage.hero_section_based_on == 'Homepage Section' and homepage.hero_section:
+		homepage.hero_section_doc = frappe.get_doc('Homepage Section', homepage.hero_section)
+
+	if homepage.slideshow:
+		doc = frappe.get_doc('Website Slideshow', homepage.slideshow)
+		context.slideshow = homepage.slideshow
+		context.slideshow_header = doc.header
+		context.slides = doc.slideshow_items
+
+
+	context.blogs = frappe.get_all('Blog Post',
+		fields=['title', 'blogger', 'blog_intro', 'published_on', 'image', 'route'],
+
+		filters={
+			'published': 1
+		},
+		order_by='modified desc',
+		limit=5
+	)
+
+
+	# filter out homepage section which is used as hero section
+	homepage_hero_section = homepage.hero_section_based_on == 'Homepage Section' and homepage.hero_section
+	homepage_sections = frappe.get_all('Homepage Section',
+		filters=[['name', '!=', homepage_hero_section]] if homepage_hero_section else None,
+		order_by='section_order asc'
+	)
+
+	context.homepage_sections = [frappe.get_doc('Homepage Section', name) for name in homepage_sections]
+
+	context.metatags = context.metatags or frappe._dict({})
+	context.metatags.image = homepage.hero_image or None
+	context.metatags.description = homepage.description or None
+
+	context.explore_link = '/all-products'
